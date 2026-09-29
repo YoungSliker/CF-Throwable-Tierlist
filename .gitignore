@@ -1,0 +1,5 @@
+_shots/
+_backup/
+scripts/
+*.pyc
+__pycache__/
