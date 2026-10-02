@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  width:1080px; height:1080px;
+  background:radial-gradient(ellipse at 50% 0%, #1a1a3e 0%, #0d1117 60%);
+  font-family:"Microsoft YaHei",sans-serif;
+  overflow:hidden; position:relative;
+}
+/* 背景光效 */
+body::before {
+  content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%);
+  width:1200px; height:800px;
+  background:radial-gradient(circle, rgba(240,180,41,.15) 0%, transparent 70%);
+}
+body::after {
+  content:''; position:absolute; bottom:-300px; right:-200px;
+  width:800px; height:800px;
+  background:radial-gradient(circle, rgba(31,111,235,.12) 0%, transparent 70%);
+}
+.stars { position:absolute; inset:0; }
+.star { position:absolute; width:3px; height:3px; background:#fff; border-radius:50%; opacity:.5; }
+
+.container { position:relative; z-index:2; padding:50px 50px; height:100%; display:flex; flex-direction:column; }
+
+/* 顶部标签 */
+.badge {
+  display:inline-block; align-self:center;
+  padding:10px 30px; border:1px solid rgba(240,180,41,.4); border-radius:30px;
+  color:#f0b429; font-size:22px; letter-spacing:4px; margin-bottom:30px;
+  background:rgba(240,180,41,.08);
+}
+
+/* 主标题 */
+h1 {
+  text-align:center; font-size:72px; font-weight:900; line-height:1.1;
+  background:linear-gradient(135deg,#ffd700 0%,#f0b429 40%,#e040fb 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  margin-bottom:30px;
+}
+.subtitle { text-align:center; color:#8b949e; font-size:28px; margin-bottom:50px; }
+
+/* 图标展示区 */
+.icons-row {
+  display:flex; justify-content:center; gap:24px; margin:20px 0 60px;
+}
+.icon-card {
+  width:160px; height:160px; border-radius:20px;
+  background:rgba(22,27,34,.8); border:1px solid #30363d;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.icon-card img { width:130px; height:130px; object-fit:cover; }
+.icon-card:nth-child(1) { border-color:#ffd700; box-shadow:0 0 40px rgba(255,215,0,.4); }
+.icon-card:nth-child(2) { border-color:#a855f7; box-shadow:0 0 40px rgba(168,85,247,.4); }
+.icon-card:nth-child(3) { border-color:#3b82f6; box-shadow:0 0 40px rgba(59,130,246,.4); }
+.tier-label {
+  position:absolute; top:10px; left:10px;
+  font-size:22px; font-weight:900; padding:6px 16px; border-radius:10px;
+}
+.t0 { background:linear-gradient(135deg,#ffd700,#ffaa00); color:#000; }
+.t1 { background:linear-gradient(135deg,#a855f7,#7c3aed); color:#fff; }
+.t2 { background:linear-gradient(135deg,#3b82f6,#2563eb); color:#fff; }
+
+/* 特性列表 */
+.tier-strip {
+  display:flex; justify-content:center; gap:12px; margin-bottom:50px;
+}
+.ts {
+  padding:10px 24px; border-radius:10px; font-size:24px; font-weight:900; color:#fff;
+}
+.ts.t0 { background:linear-gradient(135deg,#ffd700,#ffaa00); color:#000; }
+.ts.t1 { background:linear-gradient(135deg,#a855f7,#7c3aed); }
+.ts.t2 { background:linear-gradient(135deg,#3b82f6,#2563eb); }
+.ts.t3 { background:linear-gradient(135deg,#22c55e,#16a34a); }
+.ts.t4 { background:linear-gradient(135deg,#f97316,#ea580c); }
+.ts.t5 { background:linear-gradient(135deg,#64748b,#475569); }
+.ts.t6 { background:linear-gradient(135deg,#14b8a6,#0d9488); }
+.ts.t7 { background:linear-gradient(135deg,#6b7280,#4b5563); }
+
+.features {
+  display:flex; flex-direction:column; gap:16px; margin-bottom:20px; flex:1; justify-content:center;
+  background:rgba(22,27,34,.6); padding:24px 40px; border-radius:20px;
+  border:1px solid #30363d;
+}
+.feature {
+  display:flex; align-items:center; gap:20px; font-size:28px; color:#c9d1d9;
+}
+.feature-num {
+  width:48px; height:48px; border-radius:50%; flex-shrink:0;
+  background:linear-gradient(135deg,#1f6feb,#388bfd);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:22px; color:#fff;
+}
+
+/* 底部URL */
+.url-box {
+  margin-top:auto; text-align:center;
+  padding:20px; background:rgba(31,111,235,.1); border-radius:16px;
+  border:1px solid rgba(56,139,253,.3);
+}
+.url-label { color:#7d8590; font-size:18px; margin-bottom:8px; }
+.url {
+  font-size:28px; font-weight:700; color:#58a6ff;
+  word-break:break-all; line-height:1.3;
+}
+.credit { text-align:center; color:#484f58; font-size:16px; margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="container">
+  <div class="badge">CF 投掷物资料站</div>
+  <h1>投掷物性能天梯</h1>
+
+  <div class="icons-row">
+    <div class="icon-card">
+      <span class="tier-label t0">T0</span>
+      <img src="assets_web/grenade_leiting_wangzhe.png">
+    </div>
+    <div class="icon-card">
+      <span class="tier-label t1">T1</span>
+      <img src="assets_web/flash_leibao.png">
+    </div>
+    <div class="icon-card">
+      <span class="tier-label t2">T2</span>
+      <img src="assets_web/smoke_xuanbao.png">
+    </div>
+  </div>
+
+  <div class="tier-strip">
+    <span class="ts t0">T0</span><span class="ts t1">T1</span><span class="ts t2">T2</span><span class="ts t3">T3</span><span class="ts t4">T4</span><span class="ts t5">T5</span><span class="ts t6">T6</span><span class="ts t7">T7</span>
+  </div>
+
+  <div class="features">
+    <div class="feature"><span class="feature-num">1</span>手雷 / 烟雾弹 / 闪光弹三分类</div>
+    <div class="feature"><span class="feature-num">2</span>官网武器百科高清图标</div>
+    <div class="feature"><span class="feature-num">3</span>搜索秒定位，同名循环跳转</div>
+    <div class="feature"><span class="feature-num">4</span>手机电脑都能看，持续更新</div>
+  </div>
+
+  <div class="url-box">
+    <div class="url-label">复制链接访问</div>
+    <div class="url">youngsliker.github.io/<br>CF-Throwable-Tierlist</div>
+  </div>
+  <div class="credit">数据来源：笑脸有个梦想 · 制作：YoungSliker</div>
+</div>
+<script>
+const s = document.getElementById('stars');
+for (let i = 0; i < 60; i++) {
+  const d = document.createElement('div');
+  d.className = 'star';
+  d.style.left = Math.random()*100 + '%';
+  d.style.top = Math.random()*100 + '%';
+  d.style.opacity = Math.random()*0.6 + 0.2;
+  s.appendChild(d);
+}
+</script>
+</body>
+</html>
