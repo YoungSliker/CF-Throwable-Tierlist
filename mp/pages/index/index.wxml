@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="title">CF 投掷物性能天梯</view>
+  <view class="subtitle">数据来源：笑脸有个梦想 · 制作：YoungSliker</view>
+
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索投掷物名称..." value="{{keyword}}" bindinput="onSearch" bindconfirm="onConfirm" confirm-type="search"/>
+    <view class="next-btn" bindtap="onConfirm">下一个</view>
+  </view>
+  <view class="match-counter" wx:if="{{keyword}}">{{counterText}}</view>
+
+  <view class="tabs">
+    <view wx:for="{{tabs}}" wx:key="key"
+          class="tab {{activeTab===item.key?'active':''}} {{tabFlash===item.key?'flash':''}}"
+          data-key="{{item.key}}" bindtap="onTabTap">
+      {{item.label}}
+    </view>
+  </view>
+
+  <block wx:for="{{tiers}}" wx:for-item="tier" wx:key="tier">
+    <view class="tier-row {{dimmedMap[tier.tier]?'dimmed':''}}">
+      <view class="tier-badge T{{tier.tier}}">{{tier.tier}}</view>
+      <view class="tier-body">
+        <view class="icons-grid">
+          <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
+            <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">
+              <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
+              <view wx:else class="no-icon-text">{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+        <view class="names-row">
+          <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
+            <text class="name-tag {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="empty" wx:if="{{tiers.length===0}}">
+    <view class="empty-text">该分类数据待补充</view>
+  </view>
+</view>

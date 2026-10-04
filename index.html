@@ -19,14 +19,20 @@
     -webkit-background-clip:text; -webkit-text-fill-color:transparent;
   }
   .subtitle { text-align:center; color:#7d8590; font-size:13px; margin-bottom:20px; }
-  .search-bar { display:flex; justify-content:center; margin-bottom:20px; }
+  .search-bar { display:flex; justify-content:center; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
   .search-bar input {
-    width:320px; padding:10px 16px; border-radius:10px;
+    flex:0 1 320px; padding:10px 16px; border-radius:10px;
     background:#161b22; border:1px solid #30363d; color:#e6edf3;
     font-size:14px; outline:none; transition:border-color .2s;
   }
   .search-bar input:focus { border-color:#388bfd; }
   .search-bar input::placeholder { color:#484f58; }
+  .next-btn {
+    padding:10px 20px; border-radius:10px; border:1px solid #f0b429;
+    background:linear-gradient(135deg,#f0b429,#d97706); color:#000;
+    font-size:14px; font-weight:700; cursor:pointer; white-space:nowrap;
+  }
+  .next-btn:active { transform:scale(.96); }
   .tabs { display:flex; gap:8px; justify-content:center; margin-bottom:24px; }
   .tab {
     padding:10px 28px; border-radius:10px; background:#161b22; color:#7d8590;
@@ -99,18 +105,24 @@
   .panel { display:none; }
   .panel.active { display:block; }
   @media (max-width:640px) {
-    .tier-row { flex-direction:column; align-items:flex-start; gap:8px; padding:12px; }
-    .sub-row { flex-direction:column; align-items:flex-start; gap:8px; }
+    h1 { font-size:22px; }
+    .subtitle { font-size:11px; }
+    .tier-row { flex-direction:row; align-items:flex-start; gap:8px; padding:10px; }
+    .sub-row { flex-direction:column; align-items:flex-start; gap:10px; width:100%; }
     .sub-divider { display:none; }
-    .tier-badge { width:44px; height:44px; font-size:17px; }
-    .sub-icons { grid-template-columns:repeat(3, 90px); gap:6px; width:auto !important; }
-    .sub-icons .icon-wrap { width:90px; height:90px; }
-    .sub-icons .icon-wrap img { width:90px; height:90px; }
-    .sub-icons > .no-icon { width:90px; height:90px; font-size:10px; }
-    .sub-names { padding:0 0 0 0; width:100%; font-size:13px; }
-    .search-bar input { width:100%; max-width:320px; }
-    .container { padding:0 8px; }
-    body { padding:16px 8px 40px; }
+    .tier-badge { width:40px; height:40px; font-size:15px; margin-top:0; }
+    .sub-icons { grid-template-columns:repeat(3, 100px); gap:6px; width:100% !important; }
+    .sub-icons .icon-wrap { width:100px; height:100px; }
+    .sub-icons .icon-wrap img { width:100px; height:100px; }
+    .sub-icons > .no-icon { width:100px; height:100px; font-size:10px; }
+    .sub-names { padding:0; width:100%; font-size:12px; gap:4px 6px; }
+    .sub-names .name { padding:2px 8px; }
+    .search-bar input { flex:1 1 auto; width:auto; min-width:0; }
+    .next-btn { padding:10px 16px; font-size:13px; }
+    .tabs { gap:6px; flex-wrap:wrap; }
+    .tab { padding:8px 16px; font-size:13px; }
+    .container { padding:0 6px; }
+    body { padding:12px 6px 40px; }
   }
 </style>
 </head>
@@ -120,11 +132,13 @@
   <p class="subtitle">T0 最强 ~ T7 垫底 · 图标来源：CF官网武器百科<br>数据来源：笑脸有个梦想 · 网页搜集制作：YoungSliker</p>
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="搜索投掷物名称...">
+    <button id="nextBtn" class="next-btn" type="button">下一个</button>
   </div>
   <div class="tabs">
     <div class="tab active" data-panel="grenade">手雷</div>
     <div class="tab" data-panel="smoke">烟雾弹</div>
     <div class="tab" data-panel="flash">闪光弹</div>
+    <div class="tab" data-panel="bio">生化手雷</div>
   </div>
   <div class="match-counter" id="matchCounter"></div>
 
@@ -367,6 +381,14 @@
       </div>
     </div>
   </div>
+
+  <!-- ===== 生化手雷 ===== -->
+  <div class="panel" id="panel-bio">
+    <div style="text-align:center;padding:80px 20px;color:#7d8590;">
+      <div style="font-size:16px;margin-bottom:8px;">该分类数据待补充</div>
+      <div style="font-size:13px;">提供排行截图后更新</div>
+    </div>
+  </div>
 </div>
 <script>
 // ===== 防复制/防查看源码保护 =====
@@ -568,6 +590,12 @@ searchInput.addEventListener('keydown', (e) => {
     e.preventDefault();
     jumpToMatch(currentMatchIdx + 1);
   }
+});
+
+// 手机端"下一个"按钮
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (!allMatches.length) return;
+  jumpToMatch(currentMatchIdx + 1);
 });
 </script>
 </body>

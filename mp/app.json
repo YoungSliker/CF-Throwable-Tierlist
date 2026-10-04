@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "subpackages": [
+    {
+      "root": "subpkg-grenade",
+      "name": "grenade",
+      "pages": [
+        "icons/icons"
+      ]
+    },
+    {
+      "root": "subpkg-smoke",
+      "name": "smoke",
+      "pages": [
+        "icons/icons"
+      ]
+    },
+    {
+      "root": "subpkg-flash",
+      "name": "flash",
+      "pages": [
+        "icons/icons"
+      ]
+    },
+    {
+      "root": "subpkg-bio",
+      "name": "bio",
+      "pages": [
+        "icons/icons"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0d1117",
+    "navigationBarTitleText": "CF投掷物天梯",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0d1117"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
