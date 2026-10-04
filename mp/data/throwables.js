@@ -211,6 +211,35 @@ const DATA = {
     ]},
   ]},
   bio: { label: "生化手雷", tiers: [
+    { tier: "T0", items: [
+      { name: "迷你生化手雷-黑桃战神", desc: "瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快", noIcon: true },
+      { name: "迷你生化手雷-贪吃蛇", desc: "瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快", noIcon: true },
+      { name: "迷你生化手雷-灵魂忍者", desc: "瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快", noIcon: true },
+      { name: "熔晶手雷", desc: "瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快", noIcon: true },
+    ]},
+    { tier: "T1", items: [
+      { name: "迷你生化手雷", desc: "瞬爆√，伤害=生化手雷，减速√", noIcon: true },
+      { name: "迷你生化手雷-救赎猎手", desc: "瞬爆×，伤害=0，特殊*冰冻", noIcon: true },
+      { name: "迷你生化手雷-致命毒蝰", desc: "瞬爆×，伤害=0，减速无，特殊*炸到幽灵有毒蝰箱子效果", noIcon: true },
+    ]},
+    { tier: "T2", items: [
+      { name: "迷你生化手雷-末日之翼", desc: "瞬爆√，伤害=妖姬雷，减速√，妖姬换皮", noIcon: true },
+      { name: "迷你生化手雷-风火哪吒", desc: "瞬爆×，伤害略低，减速略低，特殊*灼烧", noIcon: true },
+      { name: "迷你生化手雷-原始机械猎手", desc: "瞬爆×，伤害略低，减速无，特殊*炸死幽灵退化一级", noIcon: true },
+      { name: "迷你生化手雷-机械猎手", desc: "瞬爆×，伤害略低，减速无，特殊*炸死幽灵退化一级", noIcon: true },
+      { name: "迷你生化手雷-呆萌炽雪", desc: "瞬爆×，伤害略低，减速无，特殊*轻微击退", noIcon: true },
+    ]},
+    { tier: "T3", items: [
+      { name: "生化手雷", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保", noIcon: true },
+      { name: "雄黄酒手雷", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮", noIcon: true },
+      { name: "掌火生化手雷-小黄人", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮", noIcon: true },
+      { name: "生化手雷-蓝老头", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮", noIcon: true },
+      { name: "手雷-远古神话", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮", noIcon: true },
+    ]},
+    { tier: "T4", items: [
+      { name: "生化手雷-小钢", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮但投掷速度变慢", noIcon: true },
+      { name: "生化手雷-机甲核心", desc: "瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮但投掷速度变慢", noIcon: true },
+    ]},
   ]},
 };
 module.exports = { DATA };

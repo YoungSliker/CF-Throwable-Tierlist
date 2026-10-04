@@ -80,11 +80,14 @@
 /* 点击图标弹出的名称气泡，贴在图标上方 */
 .cell-tip {
   position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
-  background: #1f6feb; color: #fff; padding: 8rpx 16rpx;
-  border-radius: 10rpx; font-size: 22rpx; white-space: nowrap;
+  background: #1f6feb; color: #fff; padding: 10rpx 16rpx;
+  border-radius: 10rpx; font-size: 22rpx;
   z-index: 50; margin-bottom: 8rpx;
   box-shadow: 0 4rpx 16rpx rgba(31,111,235,.5);
+  max-width: 400rpx; white-space: normal; text-align: center;
 }
+.tip-name { font-weight: 700; margin-bottom: 4rpx; }
+.tip-desc { font-size: 20rpx; opacity: .9; line-height: 1.4; }
 .cell-tip::after {
   content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
   border: 8rpx solid transparent; border-top-color: #1f6feb;

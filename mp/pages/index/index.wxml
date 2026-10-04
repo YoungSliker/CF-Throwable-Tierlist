@@ -26,7 +26,10 @@
             <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}" bindtap="onIconTap" data-name="{{item.name}}">
               <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
               <view wx:else class="no-icon-text">{{item.name}}</view>
-              <view class="cell-tip" wx:if="{{tipName===item.name}}">{{item.name}}</view>
+              <view class="cell-tip" wx:if="{{tipName===item.name}}">
+                <view class="tip-name">{{item.name}}</view>
+                <view class="tip-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+              </view>
             </view>
           </block>
         </view>
