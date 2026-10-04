@@ -473,9 +473,12 @@ document.querySelectorAll('.tier-row').forEach(row => {
     const subNames = document.createElement('div');
     subNames.className = 'sub-names';
     chunkNames.forEach((nm, j) => {
+      const short = nm.replace(/^[^-]+-/, '');
       const nameSpan = document.createElement('span');
       nameSpan.className = 'name';
-      nameSpan.textContent = nm;
+      nameSpan.textContent = short || nm;
+      nameSpan.title = nm;
+      nameSpan.dataset.full = nm;
       subNames.appendChild(nameSpan);
       // Separator between this name and next within chunk
       if (j < chunkNames.length - 1 && seps[i + j]) {
@@ -563,7 +566,8 @@ searchInput.addEventListener('input', () => {
     panel.querySelectorAll('.tier-row').forEach(row => {
       let rowMatch = false;
       row.querySelectorAll('.sub-names .name').forEach(n => {
-        if (q && n.textContent.toLowerCase().includes(q)) {
+        const full = n.dataset.full || n.textContent;
+        if (q && full.toLowerCase().includes(q)) {
           rowMatch = true;
           n.classList.add('highlight');
           const iconEl = getIconForName(n);
