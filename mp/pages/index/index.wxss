@@ -67,12 +67,12 @@
 .icon-wrap.current { box-shadow: 0 0 24rpx rgba(240,180,41,1); background: #2a2510; }
 
 .names-row {
-  display: flex; flex-wrap: wrap; gap: 8rpx; margin-top: 16rpx;
-  padding-top: 16rpx; border-top: 1rpx solid #30363d;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10rpx 8rpx;
+  margin-top: 16rpx; padding-top: 16rpx; border-top: 1rpx solid #30363d;
 }
 .name-tag {
-  padding: 6rpx 14rpx; border-radius: 8rpx; background: #21262d;
-  font-size: 20rpx; color: #c9d1d9;
+  padding: 6rpx 10rpx; border-radius: 8rpx; background: #21262d;
+  font-size: 20rpx; color: #c9d1d9; text-align: center;
 }
 .name-tag.match { background: #1f6feb; color: #fff; }
 .name-tag.current { background: #f0b429; color: #000; font-weight: 700; }

@@ -77,9 +77,10 @@
   }
   .sub-icons .icon-wrap .tip {
     position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
-    background:#1f6feb; color:#fff; padding:4px 10px; border-radius:6px;
-    font-size:12px; white-space:nowrap; pointer-events:none;
-    opacity:0; transition:opacity .15s; z-index:30; margin-bottom:6px; line-height:1.4;
+    background:#1f6feb; color:#fff; padding:6px 12px; border-radius:6px;
+    font-size:12px; white-space:pre-line; pointer-events:none;
+    opacity:0; transition:opacity .15s; z-index:30; margin-bottom:6px; line-height:1.5;
+    max-width:260px; text-align:center;
   }
   .sub-icons .icon-wrap .tip::after {
     content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
@@ -388,9 +389,65 @@
 
   <!-- ===== 生化手雷 ===== -->
   <div class="panel" id="panel-bio">
-    <div style="text-align:center;padding:80px 20px;color:#7d8590;">
-      <div style="font-size:16px;margin-bottom:8px;">该分类数据待补充</div>
-      <div style="font-size:13px;">提供排行截图后更新</div>
+    <div class="tier-row">
+      <div class="tier-badge T0">T0</div>
+      <div class="tier-body">
+        <div class="tier-icons">
+          <div class="no-icon">黑桃雷</div><div class="no-icon">贪吃蛇</div><div class="no-icon">矮子雷</div><div class="no-icon">熔晶</div>
+        </div>
+        <div class="tier-divider"></div>
+        <div class="tier-names">
+          <span class="name" data-desc="瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快">迷你生化手雷-黑桃战神</span><span class="sep">=</span><span class="name" data-desc="瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快">迷你生化手雷-贪吃蛇</span><span class="sep">=</span><span class="name" data-desc="瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快">迷你生化手雷-灵魂忍者</span><span class="sep">=</span><span class="name" data-desc="瞬爆√，伤害=妖姬雷，妖姬换皮但投掷速度变快">熔晶手雷</span>
+        </div>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-badge T1">T1</div>
+      <div class="tier-body">
+        <div class="tier-icons">
+          <div class="no-icon">妖姬雷</div><div class="no-icon">救赎雷</div><div class="no-icon">毒蝰雷</div>
+        </div>
+        <div class="tier-divider"></div>
+        <div class="tier-names">
+          <span class="name" data-desc="瞬爆√，伤害=生化手雷，减速√">迷你生化手雷</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=0，特殊*冰冻">迷你生化手雷-救赎猎手</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=0，减速无，特殊*炸到幽灵有毒蝰箱子效果">迷你生化手雷-致命毒蝰</span>
+        </div>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-badge T2">T2</div>
+      <div class="tier-body">
+        <div class="tier-icons">
+          <div class="no-icon">末日之翼</div><div class="no-icon">哪吒雷</div><div class="no-icon">机械雷</div><div class="no-icon">机械雷</div><div class="no-icon">炽雪雷</div>
+        </div>
+        <div class="tier-divider"></div>
+        <div class="tier-names">
+          <span class="name" data-desc="瞬爆√，伤害=妖姬雷，减速√，妖姬换皮">迷你生化手雷-末日之翼</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害略低，减速略低，特殊*灼烧">迷你生化手雷-风火哪吒</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害略低，减速无，特殊*炸死幽灵退化一级">迷你生化手雷-原始机械猎手</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害略低，减速无，特殊*炸死幽灵退化一级">迷你生化手雷-机械猎手</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害略低，减速无，特殊*轻微击退">迷你生化手雷-呆萌炽雪</span>
+        </div>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-badge T3">T3</div>
+      <div class="tier-body">
+        <div class="tier-icons">
+          <div class="no-icon">生化雷</div><div class="no-icon">雄黄酒</div><div class="no-icon">小黄人</div><div class="no-icon">蓝老头</div><div class="no-icon">远古神话</div>
+        </div>
+        <div class="tier-divider"></div>
+        <div class="tier-names">
+          <span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保">生化手雷</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮">雄黄酒手雷</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮">掌火生化手雷-小黄人</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮">生化手雷-蓝老头</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮">手雷-远古神话</span>
+        </div>
+      </div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-badge T4">T4</div>
+      <div class="tier-body">
+        <div class="tier-icons">
+          <div class="no-icon">小钢</div><div class="no-icon">机甲核心</div>
+        </div>
+        <div class="tier-divider"></div>
+        <div class="tier-names">
+          <span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮但投掷速度变慢">生化手雷-小钢</span><span class="sep">=</span><span class="name" data-desc="瞬爆×，伤害=妖姬雷，反弹雷吃低保，生化手雷换皮但投掷速度变慢">生化手雷-机甲核心</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -435,6 +492,7 @@ document.querySelectorAll('.tier-row').forEach(row => {
   const nameEls = namesContainer.querySelectorAll('.name');
   const sepEls = namesContainer.querySelectorAll('.sep');
   const names = Array.from(nameEls).map(n => n.textContent);
+  const descs = Array.from(nameEls).map(n => n.dataset.desc || '');
   const seps = Array.from(sepEls).map(s => s.textContent);
 
   body.innerHTML = '';
@@ -461,6 +519,9 @@ document.querySelectorAll('.tier-row').forEach(row => {
       const tip = document.createElement('div');
       tip.className = 'tip';
       tip.textContent = chunkNames[j] || '';
+      if (descs[i + j]) {
+        tip.textContent += '\n' + descs[i + j];
+      }
       if (tip.textContent) wrap.appendChild(tip);
       subIcons.appendChild(wrap);
     });

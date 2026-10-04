@@ -26,9 +26,16 @@ Page({
 
   loadTab(key) {
     const panel = DATA[key];
+    const tiers = (panel ? panel.tiers : []).map(t => ({
+      tier: t.tier,
+      items: t.items.map(it => ({
+        ...it,
+        short: it.name.replace(/^[^-]+-/, '') || it.name
+      }))
+    }));
     this.setData({
       activeTab: key,
-      tiers: panel ? panel.tiers : [],
+      tiers,
       matchSet: {},
       currentName: '',
       dimmedMap: {},
