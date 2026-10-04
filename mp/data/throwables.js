@@ -220,7 +220,7 @@ const DATA = {
     { tier: "T1", items: [
       { name: "迷你生化手雷", icon: "/subpkg-bio/icons/bio_yaoji.png", desc: "瞬爆√，伤害=生化手雷，减速√" },
       { name: "迷你生化手雷-救赎猎手", icon: "/subpkg-bio/icons/bio_jiushu.png", desc: "瞬爆×，伤害=0，特殊*冰冻" },
-      { name: "迷你生化手雷-致命毒蝰", noIcon: true, desc: "瞬爆×，伤害=0，减速无，特殊*炸到幽灵有毒蝰箱子效果" },
+      { name: "迷你生化手雷-致命毒蝰", icon: "/subpkg-bio/icons/bio_dukui.png", desc: "瞬爆×，伤害=0，减速无，特殊*炸到幽灵有毒蝰箱子效果" },
     ]},
     { tier: "T2", items: [
       { name: "迷你生化手雷-末日之翼", icon: "/subpkg-bio/icons/bio_morizhiyi.png", desc: "瞬爆√，伤害=妖姬雷，减速√，妖姬换皮" },
