@@ -77,14 +77,22 @@
   }
   .sub-icons .icon-wrap .tip {
     position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
-    background:#1f6feb; color:#fff; padding:6px 12px; border-radius:6px;
-    font-size:12px; white-space:pre-line; pointer-events:none;
-    opacity:0; transition:opacity .15s; z-index:30; margin-bottom:6px; line-height:1.5;
-    max-width:260px; text-align:center;
+    background:#161b22; color:#e6edf3; padding:8px 12px; border-radius:8px;
+    font-size:12px; white-space:normal; pointer-events:none;
+    opacity:0; transition:opacity .15s; z-index:30; margin-bottom:8px;
+    line-height:1.5; max-width:280px; text-align:left;
+    border:1px solid #30363d; box-shadow:0 4px 20px rgba(0,0,0,.5);
+  }
+  .sub-icons .icon-wrap .tip .tip-name {
+    font-weight:700; font-size:13px; color:#fff; margin-bottom:4px;
+    white-space:nowrap; display:block;
+  }
+  .sub-icons .icon-wrap .tip .tip-desc {
+    font-size:11px; color:#8b949e; line-height:1.5; display:block;
   }
   .sub-icons .icon-wrap .tip::after {
     content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
-    border:5px solid transparent; border-top-color:#1f6feb;
+    border:5px solid transparent; border-top-color:#161b22;
   }
   .sub-icons .icon-wrap:hover .tip,
   .sub-icons .icon-wrap.tapped .tip { opacity:1; }
@@ -518,11 +526,17 @@ document.querySelectorAll('.tier-row').forEach(row => {
       wrap.appendChild(iconClone);
       const tip = document.createElement('div');
       tip.className = 'tip';
-      tip.textContent = chunkNames[j] || '';
+      const tipName = document.createElement('div');
+      tipName.className = 'tip-name';
+      tipName.textContent = chunkNames[j] || '';
+      tip.appendChild(tipName);
       if (descs[i + j]) {
-        tip.textContent += '\n' + descs[i + j];
+        const tipDesc = document.createElement('div');
+        tipDesc.className = 'tip-desc';
+        tipDesc.textContent = descs[i + j];
+        tip.appendChild(tipDesc);
       }
-      if (tip.textContent) wrap.appendChild(tip);
+      if (tipName.textContent) wrap.appendChild(tip);
       subIcons.appendChild(wrap);
     });
 
