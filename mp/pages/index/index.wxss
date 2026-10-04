@@ -1,11 +1,4 @@
-.container { padding: 24rpx 20rpx; position: relative; }
-.tip-popup {
-  position: fixed; top: 120rpx; left: 50%; transform: translateX(-50%);
-  background: #1f6feb; color: #fff; padding: 12rpx 24rpx;
-  border-radius: 12rpx; font-size: 26rpx; z-index: 999;
-  box-shadow: 0 4rpx 20rpx rgba(31,111,235,.5);
-  max-width: 80%; text-align: center;
-}
+.container { padding: 24rpx 20rpx; }
 .title {
   text-align: center; font-size: 44rpx; font-weight: 800;
   background: linear-gradient(135deg, #f0b429, #e040fb);
@@ -14,7 +7,7 @@
 }
 .subtitle { text-align: center; color: #7d8590; font-size: 22rpx; margin-bottom: 24rpx; }
 
-.search-bar { display: flex; gap: 16rpx; align-items: center; margin-bottom: 16rpx; padding: 0 20rpx; }
+.search-bar { display: flex; gap: 16rpx; align-items: center; margin-bottom: 16rpx; }
 .search-input {
   flex: 1; padding: 16rpx 24rpx; border-radius: 16rpx;
   background: #161b22; border: 1rpx solid #30363d; color: #e6edf3;
@@ -61,27 +54,37 @@
 
 .tier-body { flex: 1; min-width: 0; }
 .icons-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12rpx;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16rpx 12rpx;
 }
+.cell { display: flex; flex-direction: column; align-items: center; gap: 8rpx; }
 .icon-wrap {
+  position: relative;
   width: 100%; aspect-ratio: 1; background: #21262d; border-radius: 12rpx;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; overflow: visible;
 }
 .icon { width: 100%; height: 100%; }
 .no-icon-text { color: #484f58; font-size: 20rpx; text-align: center; padding: 8rpx; }
 .icon-wrap.match { box-shadow: 0 0 16rpx rgba(31,111,235,.8); }
 .icon-wrap.current { box-shadow: 0 0 24rpx rgba(240,180,41,1); background: #2a2510; }
+.cell-name {
+  font-size: 20rpx; color: #c9d1d9; text-align: center; line-height: 1.3;
+  word-break: break-all;
+}
+.cell-name.match { color: #58a6ff; font-weight: 600; }
+.cell-name.current { color: #f0b429; font-weight: 700; }
 
-.names-row {
-  display: flex; flex-wrap: wrap; gap: 8rpx; margin-top: 16rpx;
-  padding-top: 16rpx; border-top: 1rpx solid #30363d;
+/* 点击图标弹出的名称气泡，贴在图标上方 */
+.cell-tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+  background: #1f6feb; color: #fff; padding: 8rpx 16rpx;
+  border-radius: 10rpx; font-size: 22rpx; white-space: nowrap;
+  z-index: 50; margin-bottom: 8rpx;
+  box-shadow: 0 4rpx 16rpx rgba(31,111,235,.5);
 }
-.name-tag {
-  padding: 6rpx 14rpx; border-radius: 8rpx; background: #21262d;
-  font-size: 20rpx; color: #c9d1d9;
+.cell-tip::after {
+  content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 8rpx solid transparent; border-top-color: #1f6feb;
 }
-.name-tag.match { background: #1f6feb; color: #fff; }
-.name-tag.current { background: #f0b429; color: #000; font-weight: 700; }
 
 .empty { text-align: center; padding: 120rpx 0; color: #7d8590; }
 .empty-text { font-size: 28rpx; }
