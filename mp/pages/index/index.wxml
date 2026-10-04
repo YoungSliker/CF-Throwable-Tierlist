@@ -20,16 +20,20 @@
     <view class="tier-row {{dimmedMap[tier.tier]?'dimmed':''}}">
       <view class="tier-badge T{{tier.tier}}">{{tier.tier}}</view>
       <view class="tier-body">
+        <!-- 上排：图标 -->
         <view class="icons-grid">
           <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
-            <view class="cell" bindtap="onIconTap" data-name="{{item.name}}">
-              <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">
-                <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
-                <view wx:else class="no-icon-text">{{item.name}}</view>
-                <view class="cell-tip" wx:if="{{tipName===item.name}}">{{item.name}}</view>
-              </view>
-              <text class="cell-name {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">{{item.name}}</text>
+            <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}" bindtap="onIconTap" data-name="{{item.name}}">
+              <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
+              <view wx:else class="no-icon-text">{{item.name}}</view>
+              <view class="cell-tip" wx:if="{{tipName===item.name}}">{{item.name}}</view>
             </view>
+          </block>
+        </view>
+        <!-- 下排：文字 -->
+        <view class="names-row">
+          <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
+            <text class="name-tag {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">{{item.name}}</text>
           </block>
         </view>
       </view>
