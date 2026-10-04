@@ -4,7 +4,7 @@
 
   <view class="search-bar">
     <input class="search-input" placeholder="搜索投掷物名称..." value="{{keyword}}" bindinput="onSearch" bindconfirm="onConfirm" confirm-type="search"/>
-    <view class="next-btn" bindtap="onConfirm">下一个</view>
+    <view class="next-btn" wx:if="{{showNext}}" bindtap="onConfirm">下一个</view>
   </view>
   <view class="match-counter" wx:if="{{keyword}}">{{counterText}}</view>
 

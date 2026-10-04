@@ -15,7 +15,8 @@ Page({
     currentName: '',
     counterText: '',
     dimmedMap: {},
-    tabFlash: ''
+    tabFlash: '',
+    showNext: false
   },
 
   onLoad() {
@@ -30,7 +31,8 @@ Page({
       matchSet: {},
       currentName: '',
       dimmedMap: {},
-      counterText: ''
+      counterText: '',
+      showNext: false
     });
   },
 
@@ -44,7 +46,7 @@ Page({
     const q = (e.detail.value || '').trim().toLowerCase();
     this.setData({ keyword: q });
     if (!q) {
-      this.setData({ matchSet: {}, currentName: '', dimmedMap: {}, counterText: '' });
+      this.setData({ matchSet: {}, currentName: '', dimmedMap: {}, counterText: '', showNext: false });
       return;
     }
 
@@ -64,10 +66,11 @@ Page({
     this.matchIdx = 0;
 
     if (allMatches.length === 0) {
-      this.setData({ counterText: '无匹配结果', matchSet: {}, currentName: '', dimmedMap: {} });
+      this.setData({ counterText: '无匹配结果', matchSet: {}, currentName: '', dimmedMap: {}, showNext: false });
       return;
     }
 
+    this.setData({ showNext: allMatches.length > 1 });
     this.jumpToMatch(0);
   },
 
