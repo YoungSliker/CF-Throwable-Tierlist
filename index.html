@@ -63,16 +63,16 @@
   .T7 { background:linear-gradient(135deg,#6b7280,#4b5563); color:#fff; }
   .tier-body { flex:1; min-width:0; display:flex; flex-direction:column; gap:12px; }
   .sub-row { display:flex; align-items:flex-start; gap:16px; }
-  .sub-icons { flex:0 0 auto; display:grid; grid-template-columns:repeat(5, 140px); gap:10px; align-items:start; }
-  .sub-icons .icon-wrap { position:relative; display:inline-block; line-height:0; width:140px; height:140px; }
+  .sub-icons { flex:0 0 auto; display:grid; grid-template-columns:repeat(5, 110px); gap:8px; align-items:start; }
+  .sub-icons .icon-wrap { position:relative; display:inline-block; line-height:0; width:110px; height:110px; }
   .sub-icons .icon-wrap img {
-    width:140px; height:140px; object-fit:cover; display:block; cursor:pointer;
+    width:110px; height:110px; object-fit:cover; display:block; cursor:pointer;
     transition:transform .15s, filter .15s;
   }
   .sub-icons .icon-wrap img.no-crop { object-fit:contain; }
   .sub-icons .icon-wrap:hover img { transform:scale(1.1); filter:drop-shadow(0 4px 12px rgba(0,0,0,.6)); }
   .sub-icons > .no-icon {
-    width:140px; height:140px; display:flex; align-items:center; justify-content:center;
+    width:110px; height:110px; display:flex; align-items:center; justify-content:center;
     color:#484f58; font-size:12px; background:#21262d; border-radius:6px; text-align:center;
   }
   .sub-icons .icon-wrap .tip {
@@ -88,7 +88,7 @@
   .sub-icons .icon-wrap:hover .tip,
   .sub-icons .icon-wrap.tapped .tip { opacity:1; }
   .sub-divider { flex-shrink:0; width:1px; align-self:stretch; background:#30363d; }
-  .sub-names { flex:1; min-width:0; display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; font-size:13px; color:#c9d1d9; padding:10px 0 0 20px; }
+  .sub-names { flex:1; min-width:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; font-size:14px; color:#c9d1d9; padding:10px 0 0 20px; }
   .sub-names .name { padding:3px 10px; border-radius:4px; background:#21262d; white-space:nowrap; }
   .sub-names .name.highlight { background:#1f6feb; color:#fff; }
   .sub-names .name.current-match { background:#f0b429; color:#000; font-weight:700; box-shadow:0 0 12px rgba(240,180,41,.6); }
