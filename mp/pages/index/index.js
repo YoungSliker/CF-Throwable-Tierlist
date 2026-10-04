@@ -16,7 +16,8 @@ Page({
     counterText: '',
     dimmedMap: {},
     tabFlash: '',
-    showNext: false
+    showNext: false,
+    tipName: ''
   },
 
   onLoad() {
@@ -118,5 +119,10 @@ Page({
     if (this.allMatches && this.allMatches.length) {
       this.jumpToMatch(this.matchIdx + 1);
     }
+  },
+
+  onIconTap(e) {
+    const name = e.currentTarget.dataset.name;
+    this.setData({ tipName: this.data.tipName === name ? '' : name });
   }
 });

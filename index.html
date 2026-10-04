@@ -85,7 +85,8 @@
     content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
     border:5px solid transparent; border-top-color:#1f6feb;
   }
-  .sub-icons .icon-wrap:hover .tip { opacity:1; }
+  .sub-icons .icon-wrap:hover .tip,
+  .sub-icons .icon-wrap.tapped .tip { opacity:1; }
   .sub-divider { flex-shrink:0; width:1px; align-self:stretch; background:#30363d; }
   .sub-names { flex:1; min-width:0; display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; font-size:13px; color:#c9d1d9; padding:10px 0 0 20px; }
   .sub-names .name { padding:3px 10px; border-radius:4px; background:#21262d; white-space:nowrap; }
@@ -594,7 +595,20 @@ searchInput.addEventListener('keydown', (e) => {
   }
 });
 
-// 手机端"下一个"按钮
+// 手机端点击图标显示名称（替代 hover）
+document.addEventListener('click', (e) => {
+  const wrap = e.target.closest('.icon-wrap');
+  if (wrap) {
+    e.stopPropagation();
+    document.querySelectorAll('.icon-wrap.tapped').forEach(w => {
+      if (w !== wrap) w.classList.remove('tapped');
+    });
+    wrap.classList.toggle('tapped');
+    return;
+  }
+  // 点空白处收起
+  document.querySelectorAll('.icon-wrap.tapped').forEach(w => w.classList.remove('tapped'));
+});
 const nextBtn = document.getElementById('nextBtn');
 nextBtn.addEventListener('click', () => {
   if (!allMatches.length) return;

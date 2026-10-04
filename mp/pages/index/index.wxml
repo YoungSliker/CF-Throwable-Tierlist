@@ -2,6 +2,9 @@
   <view class="title">CF 投掷物性能天梯</view>
   <view class="subtitle">数据来源：笑脸有个梦想 · 制作：YoungSliker</view>
 
+  <!-- 点击图标弹出的名称气泡 -->
+  <view class="tip-popup" wx:if="{{tipName}}">{{tipName}}</view>
+
   <view class="search-bar">
     <input class="search-input" placeholder="搜索投掷物名称..." value="{{keyword}}" bindinput="onSearch" bindconfirm="onConfirm" confirm-type="search"/>
     <view class="next-btn" wx:if="{{showNext}}" bindtap="onConfirm">下一个</view>
@@ -22,7 +25,7 @@
       <view class="tier-body">
         <view class="icons-grid">
           <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
-            <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}">
+            <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}" bindtap="onIconTap" data-name="{{item.name}}">
               <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
               <view wx:else class="no-icon-text">{{item.name}}</view>
             </view>
