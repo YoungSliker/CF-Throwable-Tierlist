@@ -24,7 +24,7 @@
         <view class="icons-grid">
           <block wx:for="{{tier.items}}" wx:for-item="item" wx:key="name">
             <view class="icon-wrap {{item.noIcon?'no-icon-wrap':''}} {{matchSet[item.name]?'match':''}} {{currentName===item.name?'current':''}}" bindtap="onIconTap" data-name="{{item.name}}">
-              <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="aspectFill"/>
+              <image wx:if="{{!item.noIcon}}" class="icon" src="{{item.icon}}" mode="{{item.contain ? "aspectFit" : "aspectFill"}}"/>
               <view wx:else class="no-icon-text">{{item.name}}</view>
               <view class="cell-tip" wx:if="{{tipName===item.name}}">
                 <view class="tip-name">{{item.name}}</view>

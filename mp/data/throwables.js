@@ -133,7 +133,7 @@ const DATA = {
       { name: "闪光弹-掌火", icon: "/subpkg-flash/icons/f_zhanghuo.png" },
       { name: "闪光弹-Wegame", icon: "/subpkg-flash/icons/f_wegame.png" },
       { name: "闪光弹-WCG", icon: "/subpkg-flash/icons/f_wcg.png" },
-      { name: "闪光弹-网吧", noIcon: true },
+      { name: "闪光弹-网吧", icon: "bio_wangba.png", contain: true },
       { name: "闪光弹-黄钻贵族", icon: "/subpkg-flash/icons/f_huangzuan.png" },
       { name: "闪光弹-凤凰之炽", icon: "/subpkg-flash/icons/f_fenghuangchi.png" },
       { name: "闪光弹-QQ超级会员", icon: "/subpkg-flash/icons/f_qqchaohui.png" },
